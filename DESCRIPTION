@@ -3,15 +3,17 @@ Title: Insulin Secretion Rate Deconvolution
 Version: 0.0.1
 Authors@R: 
     person("Ken", "Stier", , "kennethstier99@gmail.com", role = c("aut", "cre", "cph"))
-Description: Calculates insulin secretioin rates from C-peptide values
-    based on the methods described in Van Cauter et al. (1992),
-    "Estimation of Insulin Secretion Rates from C-Peptide Levels".
+Description: Calculates insulin secretion rates from C-peptide values
+    based on the methods described in Van Cauter et al. (1992) 
+    [\href{https://doi.org/10.2337/diab.41.3.368}{DOI: 10.2337/diab.41.3.368}].
     Included functions calculate estimated insulin secretion rates using
-    linear or cubic spline interpolation of c-peptide values (see Eaton et
-    al., 1980, and Polonsky et al., 1986) and to calculate estimates of
-    input coefficients (volume of distribution, short half life, long half
-    life, and fraction attributed to short half life) as described by Van
-    Cauter.
+    linear or cubic spline interpolation of c-peptide values (see Eaton et al., 
+    1980 [\href{https://doi.org/10.1210/jcem-51-3-520}{DOI: 
+    10.1210/jcem-51-3-520}] and Polonsky et al., 1986 
+    [\href{https://doi.org/10.1172/jci112308}{DOI: 10.1172/JCI112308}]) 
+    and to calculate estimates of input coefficients (volume of distribution, 
+    short half life, long half life, and fraction attributed to short half life) 
+    as described by Van Cauter.
 License: GPL (>= 3)
 Imports: 
     glue,
