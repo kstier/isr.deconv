@@ -1,6 +1,6 @@
 Package: isr.deconv
 Title: Insulin Secretion Rate Deconvolution
-Version: 0.0.0.9000
+Version: 0.0.1
 Authors@R: 
     person("Ken", "Stier", , "kennethstier99@gmail.com", role = c("aut", "cre", "cph"))
 Description: Calculates insulin secretioin rates from C-peptide values
