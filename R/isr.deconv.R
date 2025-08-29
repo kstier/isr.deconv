@@ -55,6 +55,9 @@ isr.deconv <- function(timeseries, cpepseries, vol, shl, lhl, frc, method = c("l
   if(length(timeseries) != length(cpepseries)) {
     stop("Error: timeseries and cpepseries must have the same number of values.")
   }
+  if(length(timeseries) < 2) {
+    stop("Error: A minimum of 2 time points is required.")
+  }
 
   ## Sort values
   ord <- order(timeseries)
