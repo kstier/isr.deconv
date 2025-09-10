@@ -118,28 +118,36 @@ isr.deconv <- function(timeseries, cpepseries, vol, shl, lhl, frc, method = c("l
     ## Output function
     return(function(t) vapply(t, function(s) isr(t0, s), numeric(1)))
   } else if (method == "linear") {
+    ## Define time points of interest as midpoint between each input time
     timeseries.right <- timeseries[-1]
     timeseries.left <- timeseries[-length(timeseries)]
-    C.right <- C[-1]
-    C.left <- C[-length(C)]
-
     midpoint.times <- (timeseries.right + timeseries.left) / 2
     midpoint.times.t0 <- append(t0, midpoint.times)
 
+    ## Calculate linear slope of C peptide curve at each time point of interest
+    C.right <- C[-1]
+    C.left <- C[-length(C)]
     C.slope <- (C.right - C.left) / (timeseries.right - timeseries.left)
 
+    ## Define function for linear interpolation of c-peptide values
     f_linear <- function(t) approx(x = timeseries, y = C, xout = t, method = "linear", rule = 1)$y
 
+    ## Calculated estimated c-peptide value at each time point
     f_linear.vals <- f_linear(midpoint.times)
 
+    ## Define function to determine the numeric linear estimated integrand
     f_linear_integrand_fun1 <- function(s) f_linear(s) * exp(k2 * s)
 
+    ## Find value of integrand at each time point to calculate Riemann sum
     f_linear_integrand_vals <- vapply(midpoint.times.t0, f_linear_integrand_fun1, numeric(1))
 
+    ## Generate linear approximation connecting integrand values
     f_linear_integrand_fun2 <- function(t) approx(x = midpoint.times.t0, y = f_linear_integrand_vals, xout = t, method = "linear", rule = 1)$y
 
+    ## Calculate Riemann sum of integrand values using linear approximation
     linear.integral <- vapply(midpoint.times, function(t) integrate(f_linear_integrand_fun2, lower = t0, upper = t)$value, numeric(1))
 
+    ## Calculate insulin secretion rates at each time point
     linear.isr.vals <- -exp(-k2 * midpoint.times) * (k1 * f_linear(t0) * exp(k2 * t0) + k1 * k2 * linear.integral) + C.slope + (k1 + k3) * f_linear.vals
 
     ## Spline and ISR value plot
