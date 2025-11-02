@@ -1,7 +1,7 @@
 #' @title C-Peptide Short Half Life Calculator
 #'
 #' @description
-#' Outputs the relevant long half life of c-peptide for use in [isr.deconv]
+#' Outputs the relevant long half life of c-peptide for use in [isr.deconv()]
 #' based on patient type (normal, obese, or non-insulin dependent diabetes
 #' mellitus).
 #'

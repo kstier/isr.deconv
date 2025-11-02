@@ -2,7 +2,7 @@
 #'
 #' @description
 #' Calculates the estimated serum volume based on patient sex, weight, and
-#' height for use in [isr.deconv].
+#' height for use in [isr.deconv()].
 #'
 #' @param subject.sex String for patient sex, `"m"` or `"f"`.
 #' @param subject.weight Numeric for subject weight in kilograms.

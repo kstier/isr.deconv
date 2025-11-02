@@ -2,7 +2,7 @@
 #'
 #' @description
 #' Outputs the relevant fraction attributable to short half life for use in
-#' [isr.deconv] based on patient type (normal, obese, or non-insulin dependent
+#' [isr.deconv()] based on patient type (normal, obese, or non-insulin dependent
 #' diabetes mellitus).
 #'
 #' @param subject.type String for patient type.

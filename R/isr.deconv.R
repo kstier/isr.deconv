@@ -11,6 +11,9 @@
 #' Typically, c-peptide values are provided in pmol/mL and time is in minutes,
 #' resulting in insulin secretion rate outputs in pmol/min.
 #'
+#' Although this function was designed with insulin secretion in mind, it uses
+#' a two-compartment secretion model that may be applied beyond insulin.
+#'
 #' @returns If `method = "linear"` is selected (default), returns a list of time
 #' points and insulin secretory rates. If `method = "spline"` is selected, returns
 #' a function which can be called to return insulin secretory rates at specified
@@ -18,10 +21,10 @@
 #'
 #' @param timeseries Vector of numeric time values corresponding to the c-peptide values in `cpepseries`
 #' @param cpepseries Vector of numeric c-peptide values at each time point in `timeseries`
-#' @param vol Volume of distribution in the main compartment (i.e., serum volume), which can be calculated with the [isr.volume] function
-#' @param shl Short half-life, which can be calculated with the [isr.shortHL] function
-#' @param lhl Long half-life, which can be calculated with the [isr.longHL] function
-#' @param frc Fraction attributable to the short half-life, which can be calculated with the [isr.fraction] function
+#' @param vol Volume of distribution in the main compartment (i.e., serum volume), which can be calculated with the [isr.volume()] function
+#' @param shl Short half-life, which can be calculated with the [isr.shortHL()] function
+#' @param lhl Long half-life, which can be calculated with the [isr.longHL()] function
+#' @param frc Fraction attributable to the short half-life, which can be calculated with the [isr.fraction()] function
 #' @param method Determines whether C-peptide values are interpolated with linear connections between the points or a cubic spline
 #' @param plotspline Dictates whether to print a plot of the C-peptide interpolation
 #' @param plotisr Dictates whether to print a plot of the ISR output values

@@ -4,14 +4,16 @@ Version: 0.0.1
 Authors@R: 
     person("Ken", "Stier", , "kennethstier99@gmail.com", role = c("aut", "cre", "cph"))
 Description: Calculates insulin secretion rates from C-peptide values
-    based on the methods described in Van Cauter et al. (1992) 
-    <doi:10.2337/diab.41.3.368>. Included functions calculate estimated 
-    insulin secretion rates using linear or cubic spline interpolation of 
-    c-peptide values (see Eaton et al., 1980 <doi:10.1210/jcem-51-3-520> 
-    and Polonsky et al., 1986 <doi:10.1172/JCI112308>) and to calculate 
-    estimates of input coefficients (volume of distribution, short half life, 
-    long half life, and fraction attributed to short half life) as described by 
-    Van Cauter.
+    based on the methods described in Van Cauter et al. (1992)
+    <doi:10.2337/diab.41.3.368>. Includes functions to calculate estimated
+    insulin secretion rates using linear or cubic spline interpolation of
+    c-peptide values (see Eaton et al., 1980 <doi:10.1210/jcem-51-3-520>
+    and Polonsky et al., 1986 <doi:10.1172/JCI112308>) and to calculate
+    estimates of input coefficients (volume of distribution, short half life,
+    long half life, and fraction attributed to short half life) as described by
+    Van Cauter. Although the generated coefficients are specific to insulin
+    secretion, the two-compartment secretion model used here is useful for
+    certain applications beyond insulin.
 License: GPL (>= 3)
 Imports: 
     glue,
