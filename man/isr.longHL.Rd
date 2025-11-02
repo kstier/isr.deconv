@@ -13,7 +13,7 @@ isr.longHL(subject.age)
 Numeric value.
 }
 \description{
-Outputs the long half life based on patient age for use in \link{isr.deconv} per
+Outputs the long half life based on patient age for use in \code{\link[=isr.deconv]{isr.deconv()}} per
 the Van Cauter method of estimating insulin secretion rate.
 }
 \examples{

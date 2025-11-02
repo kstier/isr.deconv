@@ -23,13 +23,13 @@ isr.deconv(
 
 \item{cpepseries}{Vector of numeric c-peptide values at each time point in \code{timeseries}}
 
-\item{vol}{Volume of distribution in the main compartment (i.e., serum volume), which can be calculated with the \link{isr.volume} function}
+\item{vol}{Volume of distribution in the main compartment (i.e., serum volume), which can be calculated with the \code{\link[=isr.volume]{isr.volume()}} function}
 
-\item{shl}{Short half-life, which can be calculated with the \link{isr.shortHL} function}
+\item{shl}{Short half-life, which can be calculated with the \code{\link[=isr.shortHL]{isr.shortHL()}} function}
 
-\item{lhl}{Long half-life, which can be calculated with the \link{isr.longHL} function}
+\item{lhl}{Long half-life, which can be calculated with the \code{\link[=isr.longHL]{isr.longHL()}} function}
 
-\item{frc}{Fraction attributable to the short half-life, which can be calculated with the \link{isr.fraction} function}
+\item{frc}{Fraction attributable to the short half-life, which can be calculated with the \code{\link[=isr.fraction]{isr.fraction()}} function}
 
 \item{method}{Determines whether C-peptide values are interpolated with linear connections between the points or a cubic spline}
 
@@ -57,6 +57,9 @@ be called to return insulin secretory rates for specific time points.
 
 Typically, c-peptide values are provided in pmol/mL and time is in minutes,
 resulting in insulin secretion rate outputs in pmol/min.
+
+Although this function was designed with insulin secretion in mind, it uses
+a two-compartment secretion model that may be applied beyond insulin.
 }
 \examples{
 isr.deconv(

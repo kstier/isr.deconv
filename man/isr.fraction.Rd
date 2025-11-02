@@ -14,7 +14,7 @@ Numeric value.
 }
 \description{
 Outputs the relevant fraction attributable to short half life for use in
-\link{isr.deconv} based on patient type (normal, obese, or non-insulin dependent
+\code{\link[=isr.deconv]{isr.deconv()}} based on patient type (normal, obese, or non-insulin dependent
 diabetes mellitus).
 }
 \examples{

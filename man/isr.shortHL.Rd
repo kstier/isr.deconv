@@ -13,7 +13,7 @@ isr.shortHL(subject.type = c("normal", "obese", "niddm"))
 Numeric value.
 }
 \description{
-Outputs the relevant long half life of c-peptide for use in \link{isr.deconv}
+Outputs the relevant long half life of c-peptide for use in \code{\link[=isr.deconv]{isr.deconv()}}
 based on patient type (normal, obese, or non-insulin dependent diabetes
 mellitus).
 }
