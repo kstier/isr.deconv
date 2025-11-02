@@ -1,4 +1,4 @@
-Package: isr.deconv
+Package: insulin.secretion
 Title: Insulin Secretion Rate Deconvolution
 Version: 0.0.1
 Authors@R: 
